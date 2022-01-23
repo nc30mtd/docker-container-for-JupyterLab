@@ -1,6 +1,6 @@
 version: "3.9"
 services:
-  py3:
+  py3-00:
     build:
       context: ./py3
       dockerfile: Dockerfile
@@ -13,23 +13,179 @@ services:
       --no-browser
       --NotebookApp.token=''
       --notebook-dir=/workspace
-    # expose:
-    #   - "8888"
-    # ports:
-    #   - "127.0.0.1:8888:8888"
+    ports:
+      - 8880:8888
+    volumes:
+      - ./py3/root_jupyter-00:/root/.jupyter
+      - ./workspace00:/workspace
+
+  py3-01:
+    build:
+      context: ./py3
+      dockerfile: Dockerfile
+    restart: always
+    entrypoint: >
+      jupyter-lab
+      --allow-root
+      --ip=0.0.0.0
+      --port=8888
+      --no-browser
+      --NotebookApp.token=''
+      --notebook-dir=/workspace
+    ports:
+      - 8881:8888
+    volumes:
+      - ./py3/root_jupyter-01:/root/.jupyter
+      - ./workspace01:/workspace
+
+  py3-02:
+    build:
+      context: ./py3
+      dockerfile: Dockerfile
+    restart: always
+    entrypoint: >
+      jupyter-lab
+      --allow-root
+      --ip=0.0.0.0
+      --port=8888
+      --no-browser
+      --NotebookApp.token=''
+      --notebook-dir=/workspace
+    ports:
+      - 8882:8888
+    volumes:
+      - ./py3/root_jupyter-02:/root/.jupyter
+      - ./workspace02:/workspace
+
+  py3-03:
+    build:
+      context: ./py3
+      dockerfile: Dockerfile
+    restart: always
+    entrypoint: >
+      jupyter-lab
+      --allow-root
+      --ip=0.0.0.0
+      --port=8888
+      --no-browser
+      --NotebookApp.token=''
+      --notebook-dir=/workspace
+    ports:
+      - 8883:8888
+    volumes:
+      - ./py3/root_jupyter-03:/root/.jupyter
+      - ./workspace03:/workspace
+      
+  py3-04:
+    build:
+      context: ./py3
+      dockerfile: Dockerfile
+    restart: always
+    entrypoint: >
+      jupyter-lab
+      --allow-root
+      --ip=0.0.0.0
+      --port=8888
+      --no-browser
+      --NotebookApp.token=''
+      --notebook-dir=/workspace
+    ports:
+      - 8884:8888
+    volumes:
+      - ./py3/root_jupyter-04:/root/.jupyter
+      - ./workspace04:/workspace
+
+  py3-05:
+    build:
+      context: ./py3
+      dockerfile: Dockerfile
+    restart: always
+    entrypoint: >
+      jupyter-lab
+      --allow-root
+      --ip=0.0.0.0
+      --port=8888
+      --no-browser
+      --NotebookApp.token=''
+      --notebook-dir=/workspace
+    ports:
+      - 8885:8888
+    volumes:
+      - ./py3/root_jupyter-05:/root/.jupyter
+      - ./workspace05:/workspace
+      
+  py3-06:
+    build:
+      context: ./py3
+      dockerfile: Dockerfile
+    restart: always
+    entrypoint: >
+      jupyter-lab
+      --allow-root
+      --ip=0.0.0.0
+      --port=8888
+      --no-browser
+      --NotebookApp.token=''
+      --notebook-dir=/workspace
+    ports:
+      - 8886:8888
+    volumes:
+      - ./py3/root_jupyter-06:/root/.jupyter
+      - ./workspace06:/workspace
+      
+  py3-07:
+    build:
+      context: ./py3
+      dockerfile: Dockerfile
+    restart: always
+    entrypoint: >
+      jupyter-lab
+      --allow-root
+      --ip=0.0.0.0
+      --port=8888
+      --no-browser
+      --NotebookApp.token=''
+      --notebook-dir=/workspace
+    ports:
+      - 8887:8888
+    volumes:
+      - ./py3/root_jupyter-07:/root/.jupyter
+      - ./workspace07:/workspace
+      
+  py3-08:
+    build:
+      context: ./py3
+      dockerfile: Dockerfile
+    restart: always
+    entrypoint: >
+      jupyter-lab
+      --allow-root
+      --ip=0.0.0.0
+      --port=8888
+      --no-browser
+      --NotebookApp.token=''
+      --notebook-dir=/workspace
     ports:
       - 8888:8888
     volumes:
-      - ./py3/root_jupyter:/root/.jupyter
-      - ./workspace:/workspace
+      - ./py3/root_jupyter-08:/root/.jupyter
+      - ./workspace08:/workspace
 
-    # GPUを使う場合の設定
-    # environment:
-    #   - "NVIDIA_VISIBLE_DEVICES=all"
-    #   - "NVIDIA_DRIVER_CAPABILITIES=all"
-    # deploy:
-    #   resources:
-    #     reservations:
-    #       devices:
-    #         - capabilities:
-    #           - gpu
+  py3-09:
+    build:
+      context: ./py3
+      dockerfile: Dockerfile
+    restart: always
+    entrypoint: >
+      jupyter-lab
+      --allow-root
+      --ip=0.0.0.0
+      --port=8888
+      --no-browser
+      --NotebookApp.token=''
+      --notebook-dir=/workspace
+    ports:
+      - 8889:8888
+    volumes:
+      - ./py3/root_jupyter-09:/root/.jupyter
+      - ./workspace09:/workspace
